@@ -1,0 +1,160 @@
+/* ==========================================
+   1. الإعدادات العامة والمتغيرات
+   ========================================== */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --text-muted: #64748b;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    direction: rtl; /* لدعم الاتجاه العربي */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================
+   2. الهيدر والعناوين (Header & Names)
+   ========================================== */
+.names {
+    text-align: center;
+    margin-bottom: 24px;
+    background: var(--card-bg);
+    padding: 20px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 600px;
+}
+
+.school_name {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.object {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.object1 {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* ==========================================
+   3. أزرار التنقل الدائرية (Circular Tabs)
+   ========================================== */
+.cir-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--card-bg);
+    padding: 8px 12px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    flex-wrap: wrap; /* يتكيف إذا كانت الشاشة صغيّرة جداً */
+}
+
+/* إخفاء دوائر الـ Radio الأصليّة */
+.cir-tabs__r {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* تصميم الـ Labels كأزرار دائرية/تفاعلية */
+.cir-tabs__t {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+/* تأثير عند التمرير بالماوس (Hover) */
+.cir-tabs__t:hover {
+    color: var(--primary-color);
+    background-color: #eff6ff;
+}
+
+/* تنسيق الزر المحدد (Active / Checked) */
+.cir-tabs__r:checked + .cir-tabs__t {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+}
+
+/* focusaccessibility عند التنقل بالكيبورد */
+.cir-tabs__r:focus-visible + .cir-tabs__t {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   4. التجاوب مع الشاشات المختلفة (Responsive)
+   ========================================== */
+
+/* للموبايل والشاشات الصغيرة */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .names {
+        padding: 15px 20px;
+    }
+
+    .school_name {
+        font-size: 1.1rem;
+    }
+
+    .object {
+        font-size: 1.4rem;
+    }
+
+    .cir-tabs {
+        width: 100%;
+        border-radius: 16px; /* تحويل التابس لشكل أكثر ملاءمة للشاشات الصغيّرة */
+        padding: 6px;
+    }
+
+    .cir-tabs__t {
+        flex: 1 1 calc(50% - 10px); /* عرض زرين في كل سطر */
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
