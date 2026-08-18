@@ -19,9 +19,8 @@
     <h2 class="object">الجدول الأسبوعي</h2>
 </div>
 
+<!-- المستوى الأول: المرحلة التعليمية -->
 <h2 class="object1">المرحلة التعليمية</h2>
-
-<!-- أزرار المرحلة التعليمية -->
 <div class="cir-tabs" role="tablist">
     <input class="cir-tabs__r" type="radio" name="stage" id="stage-kg1" />
     <label class="cir-tabs__t" for="stage-kg1">KG 1</label>
@@ -29,49 +28,57 @@
     <input class="cir-tabs__r" type="radio" name="stage" id="stage-kg2" />
     <label class="cir-tabs__t" for="stage-kg2">KG 2</label>
 
-    <input class="cir-tabs__r" type="radio" name="stage" id="stage-primary" checked />
+    <input class="cir-tabs__r" type="radio" name="stage" id="stage-primary" />
     <label class="cir-tabs__t" for="stage-primary">ابتدائي</label>
 
     <input class="cir-tabs__r" type="radio" name="stage" id="stage-prep" />
     <label class="cir-tabs__t" for="stage-prep">إعدادي</label>
 </div>
 
-<!-- أزرار الصفوف الدراسية (ابتدائي) -->
-<div class="small-container" id="smallbox1">
+<!-- المستوى الثاني: الصفوف الدراسية (ابتدائي) -->
+<div class="small-container" id="smallbox1" style="display: none;">
     <h2 class="object1 sub-title">الصف الدراسي (ابتدائي)</h2>
     <div class="cir-tabs" role="tablist">
-        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-1" checked />
-        <label class="cir-tabs__t" for="pri-grade-1">الصف الأول</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="pri-1" data-short="أولى" data-name="الصف الأول الابتدائي" />
+        <label class="cir-tabs__t" for="pri-1">الصف الأول</label>
 
-        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-2" />
-        <label class="cir-tabs__t" for="pri-grade-2">الصف الثاني</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="pri-2" data-short="ثانية" data-name="الصف الثاني الابتدائي" />
+        <label class="cir-tabs__t" for="pri-2">الصف الثاني</label>
 
-        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-3" />
-        <label class="cir-tabs__t" for="pri-grade-3">الصف الثالث</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="pri-3" data-short="ثالثة" data-name="الصف الثالث الابتدائي" />
+        <label class="cir-tabs__t" for="pri-3">الصف الثالث</label>
 
-        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-4" />
-        <label class="cir-tabs__t" for="pri-grade-4">الصف الرابع</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="pri-4" data-short="رابعة" data-name="الصف الرابع الابتدائي" />
+        <label class="cir-tabs__t" for="pri-4">الصف الرابع</label>
 
-        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-5" />
-        <label class="cir-tabs__t" for="pri-grade-5">الصف الخامس</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="pri-5" data-short="خامسة" data-name="الصف الخامس الابتدائي" />
+        <label class="cir-tabs__t" for="pri-5">الصف الخامس</label>
 
-        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-6" />
-        <label class="cir-tabs__t" for="pri-grade-6">الصف السادس</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="pri-6" data-short="سادسة" data-name="الصف السادس الابتدائي" />
+        <label class="cir-tabs__t" for="pri-6">الصف السادس</label>
     </div>
 </div>
 
-<!-- أزرار الصفوف الدراسية (إعدادي) -->
+<!-- المستوى الثاني: الصفوف الدراسية (إعدادي) -->
 <div class="small-container1" id="bigbox1" style="display: none;">
     <h2 class="object1 sub-title">الصف الدراسي (إعدادي)</h2>
     <div class="cir-tabs" role="tablist">
-        <input class="cir-tabs__r" type="radio" name="grade-prep" id="prep-grade-1" checked />
-        <label class="cir-tabs__t" for="prep-grade-1">الصف الأول الاعدادي</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="prep-1" data-short="أولى إعدادي" data-name="الصف الأول الإعدادي" />
+        <label class="cir-tabs__t" for="prep-1">الصف الأول الإعدادي</label>
 
-        <input class="cir-tabs__r" type="radio" name="grade-prep" id="prep-grade-2" />
-        <label class="cir-tabs__t" for="prep-grade-2">الصف الثاني الاعدادي</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="prep-2" data-short="ثانية إعدادي" data-name="الصف الثاني الإعدادي" />
+        <label class="cir-tabs__t" for="prep-2">الصف الثاني الإعدادي</label>
 
-        <input class="cir-tabs__r" type="radio" name="grade-prep" id="prep-grade-3" />
-        <label class="cir-tabs__t" for="prep-grade-3">الصف الثالث الاعدادي</label>
+        <input class="cir-tabs__r" type="radio" name="grade" id="prep-3" data-short="ثالثة إعدادي" data-name="الصف الثالث الإعدادي" />
+        <label class="cir-tabs__t" for="prep-3">الصف الثالث الإعدادي</label>
+    </div>
+</div>
+
+<!-- المستوى الثالث: الفصول الدراسية (تُنشأ ديناميكياً) -->
+<div class="small-container" id="classesContainer" style="display: none;">
+    <h2 class="object1 sub-title" id="classesTitle">الفصل الدراسي</h2>
+    <div class="cir-tabs" id="classesList" role="tablist">
+        <!-- يتم إنشاء أزرار الفصول هنا عبر الـ JavaScript تلقائياً -->
     </div>
 </div>
 
