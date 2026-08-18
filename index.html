@@ -1,53 +1,80 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>الجدول المدرسي - دار المعارف</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<header class="top-bar">
+    <button class="button" id="nextColorBtn">
+        <span class="button-content">Next color</span>
+    </button>
+</header>
+
 <div class="names">
-<h3 class="school_name">مدرسة دار المعارف الخاصة</h3>
-<h2 class="object">الجدول الاسبوعي</h2>
+    <h3 class="school_name">مدرسة دار المعارف الخاصة</h3>
+    <h2 class="object">الجدول الأسبوعي</h2>
 </div>
-<h2 class="object1">المرحله التعليمية</h2>
-<div class="cir-tabs" role="tablist" aria-label="Range">
-    <input class="cir-tabs__r" type="radio" name="cir-range" id="cir-r-week" checked=""/>
-    <label class="cir-tabs__t" for="cir-r-week" role="tab" id="small">ابتدائي</label>
 
-    <input class="cir-tabs__r" type="radio" name="cir-range" id="cir-r-month" />
-    <label class="cir-tabs__t" for="cir-r-month" role="tab" id="big">اعدادي</label>
+<h2 class="object1">المرحلة التعليمية</h2>
+
+<!-- أزرار المرحلة التعليمية -->
+<div class="cir-tabs" role="tablist">
+    <input class="cir-tabs__r" type="radio" name="stage" id="stage-kg1" />
+    <label class="cir-tabs__t" for="stage-kg1">KG 1</label>
+
+    <input class="cir-tabs__r" type="radio" name="stage" id="stage-kg2" />
+    <label class="cir-tabs__t" for="stage-kg2">KG 2</label>
+
+    <input class="cir-tabs__r" type="radio" name="stage" id="stage-primary" checked />
+    <label class="cir-tabs__t" for="stage-primary">ابتدائي</label>
+
+    <input class="cir-tabs__r" type="radio" name="stage" id="stage-prep" />
+    <label class="cir-tabs__t" for="stage-prep">إعدادي</label>
 </div>
-    <br>
-    <br>
-    <br>
-<div class="cir-tabs" role="tablist" aria-label="Range">
-    <input class="cir-tabs__r" type="radio" name="cir-range" id="cir-r-week" checked=""/>
-    <label class="cir-tabs__t" for="cir-r-week" role="tab" id="small">الصف الاول</label>
 
-    <input class="cir-tabs__r" type="radio" name="cir-range" id="cir-r-month" />
-    <label class="cir-tabs__t" for="cir-r-month" role="tab" id="big">الصف الثاني</label>
+<!-- أزرار الصفوف الدراسية (ابتدائي) -->
+<div class="small-container" id="smallbox1">
+    <h2 class="object1 sub-title">الصف الدراسي (ابتدائي)</h2>
+    <div class="cir-tabs" role="tablist">
+        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-1" checked />
+        <label class="cir-tabs__t" for="pri-grade-1">الصف الأول</label>
 
+        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-2" />
+        <label class="cir-tabs__t" for="pri-grade-2">الصف الثاني</label>
 
-    <input class="cir-tabs__r" type="radio" name="cir-range" id="cir-r-month" />
-    <label class="cir-tabs__t"ذئ for="cir-r-month" role="tab" id="big">الصف الثالث</label>
+        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-3" />
+        <label class="cir-tabs__t" for="pri-grade-3">الصف الثالث</label>
 
+        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-4" />
+        <label class="cir-tabs__t" for="pri-grade-4">الصف الرابع</label>
 
+        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-5" />
+        <label class="cir-tabs__t" for="pri-grade-5">الصف الخامس</label>
 
-    <input class="cir-tabs__r" type="radio" name="cir-range" id="cir-r-month" />
-    <label class="cir-tabs__t" for="cir-r-month" role="tab" id="big">الصف الرابع</label>
-
-
-    <input class="cir-tabs__r" type="radio" name="cir-range" id="cir-r-month" />
-    <label class="cir-tabs__t" for="cir-r-month" role="tab" id="big">الصف الخامس</label>
-    .
-
-
-    <input class="cir-tabs__r" type="radio" name="cir-range" id="cir-r-month" />
-    <label class="cir-tabs__t" for="cir-r-month" role="tab" id="big">الصف السادس</label>
+        <input class="cir-tabs__r" type="radio" name="grade-primary" id="pri-grade-6" />
+        <label class="cir-tabs__t" for="pri-grade-6">الصف السادس</label>
+    </div>
 </div>
+
+<!-- أزرار الصفوف الدراسية (إعدادي) -->
+<div class="small-container1" id="bigbox1" style="display: none;">
+    <h2 class="object1 sub-title">الصف الدراسي (إعدادي)</h2>
+    <div class="cir-tabs" role="tablist">
+        <input class="cir-tabs__r" type="radio" name="grade-prep" id="prep-grade-1" checked />
+        <label class="cir-tabs__t" for="prep-grade-1">الصف الأول الاعدادي</label>
+
+        <input class="cir-tabs__r" type="radio" name="grade-prep" id="prep-grade-2" />
+        <label class="cir-tabs__t" for="prep-grade-2">الصف الثاني الاعدادي</label>
+
+        <input class="cir-tabs__r" type="radio" name="grade-prep" id="prep-grade-3" />
+        <label class="cir-tabs__t" for="prep-grade-3">الصف الثالث الاعدادي</label>
+    </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
