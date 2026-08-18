@@ -1,39 +1,85 @@
-/* ==========================================
-   1. الإعدادات العامة والمتغيرات
-   ========================================== */
 :root {
     --primary-color: #2563eb;
     --primary-hover: #1d4ed8;
-    --bg-color: #f8fafc;
     --card-bg: #ffffff;
     --text-color: #1e293b;
     --text-muted: #64748b;
     --border-radius: 12px;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 body {
-    direction: rtl; /* لدعم الاتجاه العربي */
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    padding: 20px;
+    direction: rtl;
     min-height: 100vh;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--text-color);
+    background: linear-gradient(to right, #0ed2da, #5f29c7);
+    background-attachment: fixed;
+    transition: background 0.5s ease;
 }
 
-/* ==========================================
-   2. الهيدر والعناوين (Header & Names)
-   ========================================== */
+/* --- الهيدر وزر التنقل --- */
+.top-bar {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.button:active {
+    transform: scale(0.96);
+}
+
+.button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(82.3deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
+    transition: transform 0.475s ease;
+}
+
+.button:hover::before {
+    transform: scaleX(1);
+}
+
+/* --- العناوين --- */
 .names {
     text-align: center;
     margin-bottom: 24px;
@@ -54,33 +100,33 @@ body {
 
 .object {
     font-size: 1.75rem;
-    color: var(--text-color);
     font-weight: 700;
 }
 
 .object1 {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 16px;
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin: 15px 0 10px 0;
     text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* ==========================================
-   3. أزرار التنقل الدائرية (Circular Tabs)
-   ========================================== */
+/* --- تصميم أزرار الـ Tabs الاحترافية --- */
 .cir-tabs {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     background-color: var(--card-bg);
     padding: 8px 12px;
     border-radius: 50px;
     box-shadow: var(--shadow);
-    flex-wrap: wrap; /* يتكيف إذا كانت الشاشة صغيّرة جداً */
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin-bottom: 15px;
 }
 
-/* إخفاء دوائر الـ Radio الأصليّة */
+/* إخفاء الـ Radio الحقيقي */
 .cir-tabs__r {
     position: absolute;
     opacity: 0;
@@ -89,72 +135,57 @@ body {
     pointer-events: none;
 }
 
-/* تصميم الـ Labels كأزرار دائرية/تفاعلية */
+/* تصميم شكل الزر */
 .cir-tabs__t {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 25px;
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-muted);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease-in-out;
     user-select: none;
 }
 
-/* تأثير عند التمرير بالماوس (Hover) */
 .cir-tabs__t:hover {
     color: var(--primary-color);
     background-color: #eff6ff;
 }
 
-/* تنسيق الزر المحدد (Active / Checked) */
+/* الزر عند التحديد (Checked) */
 .cir-tabs__r:checked + .cir-tabs__t {
     background-color: var(--primary-color);
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
 }
 
-/* focusaccessibility عند التنقل بالكيبورد */
-.cir-tabs__r:focus-visible + .cir-tabs__t {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+.small-container , .small-container1{
+    display: none;
+    width: 100%;
+    max-width: 800px;
 }
 
-/* ==========================================
-   4. التجاوب مع الشاشات المختلفة (Responsive)
-   ========================================== */
-
-/* للموبايل والشاشات الصغيرة */
-@media (max-width: 480px) {
+/* --- التجاوب مع شاشات الموبايل --- */
+@media (max-width: 600px) {
     body {
         padding: 12px;
     }
 
-    .names {
-        padding: 15px 20px;
-    }
-
-    .school_name {
-        font-size: 1.1rem;
-    }
-
-    .object {
-        font-size: 1.4rem;
-    }
-
     .cir-tabs {
         width: 100%;
-        border-radius: 16px; /* تحويل التابس لشكل أكثر ملاءمة للشاشات الصغيّرة */
+        border-radius: 20px;
         padding: 6px;
+        gap: 6px;
     }
 
     .cir-tabs__t {
-        flex: 1 1 calc(50% - 10px); /* عرض زرين في كل سطر */
+        flex: 1 1 calc(50% - 6px); /* ترتيب الأزرار صفين متساويين في الموبايل */
         text-align: center;
-        padding: 8px 12px;
+        padding: 10px 8px;
         font-size: 0.85rem;
     }
 }
